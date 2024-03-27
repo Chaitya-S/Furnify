@@ -1,10 +1,16 @@
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import { ClerkProvider } from "@clerk/nextjs";
+import localFont from "next/font/local";
 
 // TODO CHANGE FONT
 const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
+const ivy = localFont({
+  src: "../Fonts/ivymode.ttf",
+  display: "swap",
+});
 
 // TODO ADD GOOD METDATA
 export const metadata = {

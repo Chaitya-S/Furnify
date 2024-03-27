@@ -1,18 +1,9 @@
 "use client";
 
-import {
-  SignInButton,
-  SignOutButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useUser,
-} from "@clerk/nextjs";
+import { SignOutButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 export default function NavBar() {
-  const { user, isLoaded } = useUser();
-
   return (
     <header>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
