@@ -2,8 +2,13 @@
 
 import { SignOutButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
+  const pathName = usePathname();
+
+  if (pathName.startsWith("/studio")) return null;
+
   return (
     <header>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
