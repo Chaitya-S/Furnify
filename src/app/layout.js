@@ -24,9 +24,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inter.className}>
           <NavBar />
-          <div className="flex justify-center bg-slate-500 items-center p-24">
-            {children}
-          </div>
+          <div className="flex justify-center ">{children}</div>
         </body>
       </html>
     </ClerkProvider>
