@@ -29,11 +29,6 @@ export const product = defineType({
       type: "string",
     },
     {
-      name: "sku",
-      title: "SKU",
-      type: "string",
-    },
-    {
       name: "currency",
       title: "Currency",
       type: "string",

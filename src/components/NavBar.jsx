@@ -27,17 +27,21 @@ export default function NavBar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex">
-          <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+          <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
-            <Link href="/products">Products</Link>
+          <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
+            <Link href="/products?category=all">Products</Link>
           </li>
-          <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+          <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
             <Link href="/about">About</Link>
           </li>
+        </ul>
+        <ul>
           <SignedIn>
-            <UserButton />
+            <li className="rounded-full ring-4 p-0 m-2 cursor-pointer">
+              <UserButton />
+            </li>
           </SignedIn>
           <SignedOut>
             <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
@@ -66,12 +70,14 @@ export default function NavBar() {
 
           {/* Mobile Navigation Items */}
           <li className="p-4 mt-4 duration-300 text-black cursor-pointer">
-            Home
+            <Link href="/">Home</Link>
           </li>
           <li className="p-4 duration-300 text-black cursor-pointer">
-            Products
+            <Link href="/products?category=all">Products</Link>
           </li>
-          <li className="p-4 duration-300 text-black cursor-pointer">About</li>
+          <li className="p-4 duration-300 text-black cursor-pointer">
+            <Link href="/about">About</Link>
+          </li>
         </ul>
       </div>
     </header>

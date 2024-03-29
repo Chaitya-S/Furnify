@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           >
             <Toaster />
             <NavBar />
-            <div className="flex justify-center ">{children}</div>
+            <div className="min-h-max mb-8">{children}</div>
           </CartProvider>
         </body>
       </html>
