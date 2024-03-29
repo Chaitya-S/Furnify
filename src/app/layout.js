@@ -1,16 +1,8 @@
-import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import { ClerkProvider } from "@clerk/nextjs";
-import localFont from "next/font/local";
-
-// TODO CHANGE FONT
-const inter = Inter({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
-const ivy = localFont({
-  src: "../Fonts/ivymode.ttf",
-  display: "swap",
-});
+import { Toaster } from "react-hot-toast";
+import { CartProvider } from "use-shopping-cart";
 
 // TODO ADD GOOD METDATA
 export const metadata = {
@@ -22,9 +14,17 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
-          <NavBar />
-          <div className="flex justify-center ">{children}</div>
+        <body>
+          <CartProvider
+            currency="INR"
+            shouldPersist
+            cartMode="checkout-session"
+            stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY}
+          >
+            <Toaster />
+            <NavBar />
+            <div className="flex justify-center ">{children}</div>
+          </CartProvider>
         </body>
       </html>
     </ClerkProvider>

@@ -1,81 +1,79 @@
 "use client";
 
-import { SignOutButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useShoppingCart } from "use-shopping-cart";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { ivymode, montserrat } from "@/Fonts/FontMan";
 
 export default function NavBar() {
   const pathName = usePathname();
+  // const { cartCount } = useShoppingCart();
+  const [nav, setNav] = useState(false);
 
   if (pathName.startsWith("/studio")) return null;
 
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
   return (
-    <header>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          {/* //   <img
-        //     src="https://flowbite.com/docs/images/logo.svg"
-        //     class="h-8"
-        //     alt="Flowbite Logo"
-        //   /> */}
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            <Link href="/">Furnify!</Link>
-          </span>
-          <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li className="self-center">
-                <Link href="/home">Home</Link>
-              </li>
-              <li className="self-center">
-                <Link href="/products">Products</Link>
-              </li>
-              <li className="self-center">
-                <Link href="/about">About</Link>
-              </li>
-              <li className="self-center">
-                <Link href="/contact">Contact</Link>
-              </li>
-              <SignedIn>
-                <li>
-                  <UserButton afterSignOutUrl="/" />
-                </li>
-                {/* <li>
-                  <SignOutButton />
-                </li> */}
-              </SignedIn>
-              <SignedOut>
-                <li>
-                  <Link href="/sign-in">Sign In</Link>
-                </li>
-              </SignedOut>
-            </ul>
-          </div>
+    <header className={ivymode}>
+      <div className="bg-[#561c24] flex justify-between items-center h-16 mx-auto px-4 text-white">
+        {/* Logo */}
+        <h1 className="w-full text-3xl font-bold text-[#fff243]">Furnify!</h1>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex">
+          <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+            <Link href="/products">Products</Link>
+          </li>
+          <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+            <Link href="/about">About</Link>
+          </li>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+              <Link href="/signed-in">Sign In</Link>
+            </li>
+          </SignedOut>
+        </ul>
+
+        {/* Mobile Navigation Icon */}
+        <div onClick={handleNav} className="block md:hidden">
+          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
-      </nav>
+
+        {/* Mobile Navigation Menu */}
+        <ul
+          className={
+            nav
+              ? "fixed md:hidden left-0 top-0 w-[45%] h-full border-r border-r-gray-900 bg-[#eadbc8] ease-in-out duration-500"
+              : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
+          }
+        >
+          {/* Mobile Logo */}
+          <h1 className="bg-[#561c24] w-full text-3xl p-4 font-bold text-[#fff243]">
+            Furnify!
+          </h1>
+
+          {/* Mobile Navigation Items */}
+          <li className="p-4 mt-4 duration-300 text-black cursor-pointer">
+            Home
+          </li>
+          <li className="p-4 duration-300 text-black cursor-pointer">
+            Products
+          </li>
+          <li className="p-4 duration-300 text-black cursor-pointer">About</li>
+        </ul>
+      </div>
     </header>
   );
 }

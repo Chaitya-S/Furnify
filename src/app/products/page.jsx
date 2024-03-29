@@ -2,6 +2,7 @@ import FilterBar from "@/components/ProductsPage/FilterBar";
 import { client } from "../../../sanity/lib/client";
 import { groq } from "next-sanity";
 import Grid from "@/components/ProductsPage/Grid";
+// import ProductCard from "/src/components/ProductsPage/ProductCard"
 
 export default async function Products() {
   const products = await client.fetch(groq`*[_type == "product"] {
@@ -20,6 +21,7 @@ export default async function Products() {
     <>
       {/* <FilterBar /> */}
       <Grid products={products} />
+      {/* <ProductCard/> */}
     </>
   );
 }
