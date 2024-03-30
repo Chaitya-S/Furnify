@@ -1,5 +1,5 @@
-import { product } from "./product-schema";
+import { product, Images } from "./product-schema";
 
 export const schema = {
-  types: [product],
+  types: [product, Images],
 };

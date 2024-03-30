@@ -11,6 +11,7 @@ const CartContext = createContext({
   getTotalPrice: () => {},
   clearCart: () => {},
   getCartCount: () => {},
+  getQuantity: () => {},
 });
 
 const CartProvider = ({ children }) => {
@@ -79,6 +80,17 @@ const CartProvider = ({ children }) => {
       return total + item.quantity * item.price;
     }, 0);
   };
+  const getQuantity = (product) => {
+    const existingProductIndex = cart.findIndex(
+      (item) => item._id === product._id
+    );
+
+    if (existingProductIndex != -1) {
+      return cart[existingProductIndex].quantity;
+    }
+
+    return null;
+  };
 
   const clearCart = () => {
     console.log("Clear Cart button clicked");
@@ -100,6 +112,7 @@ const CartProvider = ({ children }) => {
     getTotalPrice,
     clearCart,
     getCartCount,
+    getQuantity,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

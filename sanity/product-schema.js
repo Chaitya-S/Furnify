@@ -39,9 +39,28 @@ export const product = defineType({
       type: "number",
     },
     {
+      name: "image",
+      title: "Product Image",
+      type: "image",
+    },
+    {
       name: "splineurl",
       title: "SplineURL",
       type: "url",
+    },
+  ],
+});
+
+export const Images = defineType({
+  name: "images",
+  title: "Home Page Carousel Images",
+  type: "document",
+  fields: [
+    {
+      name: "image",
+      title: "Image",
+      type: "array",
+      of: [{ type: "image" }],
     },
   ],
 });

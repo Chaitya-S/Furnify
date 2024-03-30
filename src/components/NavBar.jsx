@@ -1,10 +1,14 @@
 "use client";
 
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiOutlineLoading,
+  AiOutlineMenu,
+} from "react-icons/ai";
 import { ivymode } from "@/Fonts/FontMan";
 import { FaCartShopping } from "react-icons/fa6";
 import { useCart } from "./CartContext";
@@ -13,6 +17,7 @@ export default function NavBar() {
   const pathName = usePathname();
   const { getCartCount } = useCart();
   const [nav, setNav] = useState(false);
+  const { user, isLoaded } = useUser();
 
   let c = getCartCount();
 
@@ -26,7 +31,9 @@ export default function NavBar() {
     <header className={ivymode}>
       <div className="bg-[#561c24] flex justify-between items-center h-16 mx-auto px-4 text-white">
         {/* Logo */}
-        <h1 className="w-full text-3xl font-bold text-[#fff243]">Furnify!</h1>
+        <h1 className="w-full text-3xl font-bold text-[#f8f0e5]">
+          <Link href="/">Furnify!</Link>
+        </h1>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex">
@@ -39,15 +46,20 @@ export default function NavBar() {
           <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
             <Link href="/about">About</Link>
           </li>
-          <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
-            <FaCartShopping />
-            <Link href="/cart">Cart {c ? c : 0} </Link>
-          </li>
+          <SignedIn>
+            <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
+              <Link className="flex gap-2 items-center" href="/cart">
+                <FaCartShopping />
+                Cart
+                <span>{c ? c : 0}</span>
+              </Link>
+            </li>
+          </SignedIn>
         </ul>
         <ul>
           <SignedIn>
             <li className="rounded-full ring-4 p-0 m-2 cursor-pointer">
-              <UserButton />
+              {isLoaded ? <UserButton /> : <AiOutlineLoading />}
             </li>
           </SignedIn>
           <SignedOut>
@@ -85,6 +97,15 @@ export default function NavBar() {
           <li className="p-4 duration-300 text-black cursor-pointer">
             <Link href="/about">About</Link>
           </li>
+          <SignedIn>
+            <li className="p-4 text-black hover:text-[#dac0a3] m-2 cursor-pointer">
+              <Link className="flex gap-2 items-center" href="/cart">
+                <FaCartShopping />
+                Cart
+                <span>{c ? c : 0}</span>
+              </Link>
+            </li>
+          </SignedIn>
         </ul>
       </div>
     </header>
