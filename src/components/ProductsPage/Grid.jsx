@@ -5,7 +5,7 @@ export default function Grid({ products }) {
   // (#reply) OK BROTHER🫡
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 self-center">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {products.map((product) => (
         <ProductCard key={product._id} product={product} />
       ))}

@@ -1,8 +1,9 @@
 import "./globals.css";
 import NavBar from "../components/NavBar";
-import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
-import { CartProvider } from "use-shopping-cart";
+import Provider from "@/components/Provider";
+
+// import { CartProvider } from "../components/CartContext";
 
 // TODO ADD GOOD METDATA
 export const metadata = {
@@ -12,21 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <Provider>
       <html lang="en">
         <body>
-          <CartProvider
-            currency="INR"
-            shouldPersist
-            cartMode="checkout-session"
-            stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY}
-          >
-            <Toaster />
-            <NavBar />
-            <div className="min-h-max mb-8">{children}</div>
-          </CartProvider>
+          <Toaster />
+          <NavBar />
+          <div className="min-h-max mb-8">{children}</div>
         </body>
       </html>
-    </ClerkProvider>
+    </Provider>
   );
 }

@@ -4,14 +4,17 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { useShoppingCart } from "use-shopping-cart";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { ivymode, montserrat } from "@/Fonts/FontMan";
+import { ivymode } from "@/Fonts/FontMan";
+import { FaCartShopping } from "react-icons/fa6";
+import { useCart } from "./CartContext";
 
 export default function NavBar() {
   const pathName = usePathname();
-  // const { cartCount } = useShoppingCart();
+  const { getCartCount } = useCart();
   const [nav, setNav] = useState(false);
+
+  let c = getCartCount();
 
   if (pathName.startsWith("/studio")) return null;
 
@@ -35,6 +38,10 @@ export default function NavBar() {
           </li>
           <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
             <Link href="/about">About</Link>
+          </li>
+          <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
+            <FaCartShopping />
+            <Link href="/cart">Cart {c ? c : 0} </Link>
           </li>
         </ul>
         <ul>
