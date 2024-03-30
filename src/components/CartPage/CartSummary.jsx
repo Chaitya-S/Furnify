@@ -8,7 +8,7 @@ export default function CartSummary() {
 
   return (
     <div
-      className={`flex flex-row justify-between items-center px-3 pt-6 h-16 font-semibold text-2xl ${ivymode}`}
+      className={`flex flex-row justify-between items-center px-3 pt-6 pb-6 font-semibold text-2xl ${ivymode}`}
     >
       <div className="py-3 px-3 text-[#553939] ml-3">
         Total Items: {getCartCount()}

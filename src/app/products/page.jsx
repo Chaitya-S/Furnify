@@ -20,6 +20,7 @@ export default async function Products({ searchParams }) {
     "slug": slug.current,
     splineurl,
     image,
+    description,
     category
   }`);
 

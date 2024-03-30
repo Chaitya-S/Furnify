@@ -12,7 +12,7 @@ async function getData(params) {
   splineurl,
   image,
   description,
-  category
+  category,
   }`);
 
   return p;

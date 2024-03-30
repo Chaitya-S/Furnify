@@ -32,7 +32,12 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="bg-[#dac0a3] w-full max-w-sm bg-[#on] border border-[#dac0a3] rounded-lg shadow-lg">
-      {/* <Image src={urlForImage(product.image)} width={300} height={450} /> */}
+      <div style={{ height: "320px", width: "100%" }}>
+        <img
+          src={urlForImage(product.image)}
+          style={{ height: "100%", width: "100%", objectFit: "fill" }}
+        />
+      </div>
       <div className="mt-2 px-5 pb-5">
         <Link href={`/products/${product.slug}`}>
           <h5
