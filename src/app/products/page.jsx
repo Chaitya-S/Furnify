@@ -1,18 +1,19 @@
-import FilterBar from "@/components/ProductsPage/FilterBar";
+import FilterSearchBar from "@/components/ProductsPage/FilterSearchBar";
 import { client } from "../../../sanity/lib/client";
 import { groq } from "next-sanity";
 import Grid from "@/components/ProductsPage/Grid";
 
 export default async function Products({ searchParams }) {
-  const { category } = searchParams;
+  const { category, search } = searchParams;
   const productFilter = `_type == "product"`;
 
-  let categoryFilter = "";
-  if (category != "" && category != "all") {
-    categoryFilter = ` && category == "${category}"`;
-  }
+  const categoryFilter =
+    category && category != undefined && category != "all"
+      ? ` && category == "${category}"`
+      : "";
 
-  const filter = `*[${productFilter}${categoryFilter}]`;
+  const searchFilter = search ? ` && name match "${search}"` : "";
+  const filter = `*[${productFilter}${categoryFilter}${searchFilter}]`;
   const products = await client.fetch(groq`${filter} {
     _id,
     name, 
@@ -28,7 +29,7 @@ export default async function Products({ searchParams }) {
   return (
     <>
       <div className="flex-col bg-[#f8f0e5] w-full">
-        <FilterBar />
+        <FilterSearchBar />
         <Grid products={products} />
       </div>
     </>

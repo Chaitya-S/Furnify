@@ -48,9 +48,9 @@ export default function AddToCartButton({ product }) {
         <button
           onClick={handleAddToCart}
           disabled={isAdded}
-          className="bg-[#553939] hover:bg-[#704f4f] hover:text-[#eadbc8] border-secondary rounded-md inline-flex items-center justify-center py-2 px-7 text-center text-base font-medium text-[#dac0a3] h-1 w-2 md:w-auto md:h-auto"
+          className="bg-[#553939] hover:bg-[#704f4f] hover:text-[#eadbc8] border-secondary rounded-md inline-flex items-center justify-center py-2 px-3 md:px-7 text-center text-md md:text-base font-medium text-[#dac0a3] h-[15vh] w-[40vw] md:w-auto md:h-auto"
         >
-          <span className="mr-[10px]">
+          <span className="mr-3 md:mr-[10px]">
             <FaCartPlus />
           </span>
           Add To Cart
