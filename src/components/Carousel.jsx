@@ -57,8 +57,8 @@ export default function ImageSlider({ images }) {
           return (
             <div
               key={url}
-              className="w-full flex-shrink-0 snap-start flex justify-center items-center"
-              style={{ height: "600px", width: "80vw" }}
+              className="flex-shrink-0 snap-start h-[300px] w-[80vw] md:h-[450px] lg:h-[600px] flex justify-center items-center"
+              // style={{ height: "600px", width: "80vw" }}
             >
               <img
                 src={url}
