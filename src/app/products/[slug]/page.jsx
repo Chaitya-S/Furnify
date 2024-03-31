@@ -46,7 +46,7 @@ export default async function Product({ params }) {
         Description
       </p>
       <p
-        className={`${montserrat} text-center text-lg self-center m-4 mx-7 pb-9 md:mx-10 text-[#553939]`}
+        className={`${montserrat} text-center text-lg self-center p-4 mx-7 pb-9 md:mx-10 text-[#553939]`}
       >
         {product.description}
       </p>

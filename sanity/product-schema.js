@@ -48,6 +48,11 @@ export const product = defineType({
       title: "SplineURL",
       type: "url",
     },
+    {
+      name: "bestseller",
+      title: "Best Seller",
+      type: "boolean",
+    },
   ],
 });
 

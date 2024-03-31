@@ -2,6 +2,9 @@ import FilterSearchBar from "@/components/ProductsPage/FilterSearchBar";
 import { client } from "../../../sanity/lib/client";
 import { groq } from "next-sanity";
 import Grid from "@/components/ProductsPage/Grid";
+import toast from "react-hot-toast";
+
+export const dynamic = "force-dynamic";
 
 export default async function Products({ searchParams }) {
   const { category, search } = searchParams;
@@ -21,11 +24,11 @@ export default async function Products({ searchParams }) {
     "slug": slug.current,
     splineurl,
     image,
-    description,
     category
   }`);
 
   // can use products.length to show total products on the respective filter.
+
   return (
     <>
       <div className="flex-col bg-[#f8f0e5] w-full">

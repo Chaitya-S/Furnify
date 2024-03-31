@@ -27,16 +27,18 @@ export default function AddToCartButton({ product }) {
       {isAdded ? (
         <div className="flex flex-row gap-3 justify-around items-center">
           <button
-            className="bg-blue-600 text-base hover:bg-[#0BB489] hover:border-[#0BB489] border-secondary rounded-md py-2 px-3 text-center font-medium text-black"
+            className="bg-[#553939] hover:bg-[#704f4f] text-base border-secondary rounded-md py-2 px-3 text-center font-medium text-[#dac0a3] hover:text-[#eadbc8]"
             onClick={() => {
               incrementQuantity(product._id);
             }}
           >
             +
           </button>
-          <div className="text-xl text-black">{getQuantity(product)}</div>
+          <div className="text-lg md:text-2xl text-[#553939]">
+            {getQuantity(product)}
+          </div>
           <button
-            className="bg-red-700 text-base hover:bg-[#0BB489] hover:border-[#0BB489] border-secondary rounded-md py-2 px-3 text-center font-medium text-black"
+            className="bg-[#553939] hover:bg-[#704f4f] text-base border-secondary rounded-md py-2 px-3 text-center font-medium text-[#dac0a3] hover:text-[#eadbc8]"
             onClick={() => {
               decrementQuantity(product._id);
             }}
