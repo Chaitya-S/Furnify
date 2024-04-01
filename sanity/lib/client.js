@@ -7,6 +7,6 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
-  token: process.env.NEXT_SANITY_API_READ_TOKEN,
+  token: process.env.NEXT_PUBLIC_SANITY_USER_ADDER_TOKEN,
   perspective: "published",
 });

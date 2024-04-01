@@ -69,3 +69,31 @@ export const Images = defineType({
     },
   ],
 });
+
+export const Reviews = defineType({
+  name: "reviews",
+  title: "Reviews",
+  type: "document",
+  fields: [
+    {
+      name: "username",
+      title: "User Name",
+      type: "string",
+    },
+    {
+      name: "userimage",
+      title: "User Image",
+      type: "url",
+    },
+    {
+      name: "productid",
+      title: "Product Id",
+      type: "string",
+    },
+    {
+      name: "message",
+      title: "Review",
+      type: "string",
+    },
+  ],
+});
