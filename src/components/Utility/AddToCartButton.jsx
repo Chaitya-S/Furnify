@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useCart } from "./CartContext";
+import { useCart } from "../CartContext";
 import { FaCartPlus } from "react-icons/fa";
 
 export default function AddToCartButton({ product }) {

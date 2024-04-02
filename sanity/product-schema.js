@@ -86,8 +86,8 @@ export const Reviews = defineType({
       type: "url",
     },
     {
-      name: "productid",
-      title: "Product Id",
+      name: "productslug",
+      title: "Product Slug",
       type: "string",
     },
     {

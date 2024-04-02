@@ -4,7 +4,7 @@ import Link from "next/link";
 import { urlForImage } from "../../../sanity/lib/image";
 import { ivymode, montserrat } from "@/Fonts/FontMan";
 import { SignedIn } from "@clerk/nextjs";
-import AddToCartButton from "../AddToCartButton";
+import AddToCartButton from "../Utility/AddToCartButton";
 
 export default function ProductCard({ product }) {
   return (

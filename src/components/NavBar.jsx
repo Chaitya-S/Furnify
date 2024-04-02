@@ -83,7 +83,7 @@ export default function NavBar() {
           }
         >
           {/* Mobile Logo */}
-          <h1 className="bg-[#561c24] w-full text-3xl p-4 font-bold text-[#fff243]">
+          <h1 className="bg-[#561c24] w-full text-3xl p-4 font-bold text-[#f8f0e5]">
             Furnify!
           </h1>
 

@@ -1,4 +1,4 @@
-import { CartProvider } from "./CartContext";
+import { CartProvider } from "../CartContext";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export default function Provider({ children }) {

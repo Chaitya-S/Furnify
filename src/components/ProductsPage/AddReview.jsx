@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { client } from "../../../sanity/lib/client";
 import { useUser } from "@clerk/nextjs";
 
-export default function AddReview({ productId }) {
+export default function AddReview({ slug }) {
   const reviewInputRef = useRef();
   const { user } = useUser();
 
@@ -13,7 +13,7 @@ export default function AddReview({ productId }) {
         username: user.fullName,
         userimage: user.imageUrl,
         message: reviewInputRef.current.value,
-        productid: productId,
+        productslug: slug,
       })
       .then((res) => {
         console.log(`Review created with id = ${res._id}`);
@@ -24,28 +24,33 @@ export default function AddReview({ productId }) {
   };
   return (
     <>
-      <form onSubmit={handleAddReview}>
-        <input
-          type="text"
-          ref={reviewInputRef}
-          name="review"
-          id="review"
-          autoComplete="off"
-          placeholder="Write a review..."
-          className="text-[#553939]"
-        />
-      </form>
-      <button onClick={handleAddReview} className="text-[#553939]">
-        Post
-      </button>
-      <button
-        onClick={() => {
-          reviewInputRef.current.value = "";
-        }}
-        className="text-[#553939]"
-      >
-        Clear
-      </button>
+      <div className="flex mx-4 mt-4 p-2 rounded-lg">
+        <form onSubmit={handleAddReview}>
+          <input
+            type="text"
+            ref={reviewInputRef}
+            name="review"
+            id="review"
+            autoComplete="off"
+            placeholder="Write a review..."
+            className="text-[#704f4f] rounded-full p-2 bg-[#eadbc8] hover:bg-[#dac0a3] shadow-md"
+          />
+        </form>
+        <button
+          onClick={handleAddReview}
+          className="text-[#553939] rounded-lg pl-4 pr-2"
+        >
+          Post
+        </button>
+        <button
+          onClick={() => {
+            reviewInputRef.current.value = "";
+          }}
+          className="text-[#553939] rounded-lg pr-4 pl-2"
+        >
+          Clear
+        </button>
+      </div>
     </>
   );
 }

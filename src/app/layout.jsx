@@ -1,7 +1,8 @@
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import { Toaster } from "react-hot-toast";
-import Provider from "@/components/Provider";
+import Provider from "@/components/Utility/Provider";
+import Footer from "@/components/Footer";
 
 // import { CartProvider } from "../components/CartContext";
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
           <Toaster />
           <NavBar />
           <div className="min-h-screen bg-[#f8f0e5]">{children}</div>
+          <Footer />
         </body>
       </html>
     </Provider>

@@ -1,15 +1,19 @@
-export default function bestseller() {
-  //TODO - use images from bestseller sanity data
-  const imgArray = [
-    { src: "/bestseller/Blue.png", url: "/products/blue-table" },
-    { src: "/bestseller/bunk.png", url: "/products/bunk-bed" },
-    { src: "/bestseller/coffee.png", url: "/products/coffee-table" },
-    { src: "/bestseller/curved.png", url: "/products/curved-chair" },
-    { src: "/bestseller/hanging.png", url: "/products/hanging-chair" },
-    { src: "/bestseller/luxurious.png", url: "/products/luxurious-bed" },
-    { src: "/bestseller/pink.png", url: "/products/pink-sofa" },
-    { src: "/bestseller/Quillited.png", url: "/products/quillited-sofa" },
-  ];
+import { groq } from "next-sanity";
+import { client } from "../../sanity/lib/client";
+import { urlForImage } from "../../sanity/lib/image";
 
-  return <div>bestseller</div>;
+export default async function BestSeller() {
+  const products = await client.fetch(
+    groq`*[type == "product" && bestseller == true]`
+  );
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div>
+        {products.map((p) => {
+          <img src={urlForImage(p.image)} alt="" />;
+        })}
+      </div>
+    </div>
+  );
 }

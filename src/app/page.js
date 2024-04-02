@@ -1,8 +1,9 @@
 "use client";
 
 import { ivymode } from "@/Fonts/FontMan.js";
-import Carousel from "../components/Carousel.jsx";
+import Carousel from "../components/Utility/Carousel.jsx";
 import Spline from "@splinetool/react-spline";
+import BestSeller from "@/components/bestseller.jsx";
 
 export default function Home() {
   const images = ["/images/i1.jpg", "/images/i2.jpg", "/images/i3.jpg"];

@@ -53,7 +53,7 @@ export default function FilterSearchBar() {
             name="search"
             id="search"
             autoComplete="off"
-            className="text-[#704f4f] placeholder-[#553939] border-3 border-[#553939] rounded-full p-4 hover:bg-[#dac0a3] bg-[#eadbc8]"
+            className="text-[#704f4f] placeholder-[#553939] border-3 border-[#553939] rounded-full shadow-md  p-4 hover:bg-[#dac0a3] bg-[#eadbc8]"
             placeholder="Search Products..."
             defaultValue={defaultSearchQuery}
           />
