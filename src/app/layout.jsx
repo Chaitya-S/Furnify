@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <Provider>
       <html lang="en">
         <body>
-          <Toaster />
+          <Toaster position="bottom-right" />
           <NavBar />
           <div className="min-h-screen bg-[#f8f0e5]">{children}</div>
           <Footer />

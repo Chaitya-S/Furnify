@@ -6,7 +6,7 @@ function About() {
   return (
     <>
       <div className="grid grid-cols-3 gap-2 pt-6 text-[#553939]">
-        <div className="col-span-2 p-20">
+        <div className="col-span-3 sm:col-span-2 p-3 sm:p-6 md:p-20">
           <h1 className={`text-5xl mb-4 ${ivymode}`}>About Us</h1>
           <p className={`my-9 ${montserrat}`}>
             Welcome to Furnify, your premier destination for high-quality
@@ -60,11 +60,13 @@ function About() {
             inbox.
           </p>
         </div>
-        <div>
+        <div className="invisible md:visible">
           <Image src="/images/about.png" height={400} width={400} />
         </div>
       </div>
-      <p className="text-3xl pb-9 text-[#553939] flex-row text-center">
+      <p
+        className={`${montserrat} text-xl pb-9 text-[#553939] flex-row text-center`}
+      >
         Thank you for choosing Furnify. We look forward to helping you create
         the home of your dreams!
       </p>

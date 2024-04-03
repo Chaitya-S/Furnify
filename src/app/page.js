@@ -3,7 +3,8 @@
 import { ivymode } from "@/Fonts/FontMan.js";
 import Carousel from "../components/Utility/Carousel.jsx";
 import Spline from "@splinetool/react-spline";
-import BestSeller from "@/components/bestseller.jsx";
+import BestSeller from "@/components/Utility/BestSeller.jsx";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 export default function Home() {
   const images = ["/images/i1.jpg", "/images/i2.jpg", "/images/i3.jpg"];
@@ -19,6 +20,9 @@ export default function Home() {
         'A <span className="text-[#6d2932]">revolutionary</span> online
         <span className="text-[#6d2932]"> 3D </span> experience furniture
         store.'
+      </p>
+      <p className="text-[#a77979] text-4xl md:text-4xl text-center justify-center mt-4 mb-8 w-4/5">
+        Design Your Room <MdOutlineDoubleArrow />
       </p>
       <Carousel images={images} />
       <p className="text-black text-4xl content-center text-center justify-center my-8 w-4/5">

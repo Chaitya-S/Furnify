@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import { client } from "../../../sanity/lib/client";
 import { useUser } from "@clerk/nextjs";

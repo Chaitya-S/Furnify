@@ -31,7 +31,8 @@ export default function NavBar() {
     <header className={ivymode}>
       <div className="bg-[#561c24] flex justify-between items-center h-16 mx-auto px-4 text-white">
         {/* Logo */}
-        <h1 className="w-full text-3xl font-bold text-[#f8f0e5]">
+        <img src="/images/logo.png" className="h-10" alt="Furnify Logo" />
+        <h1 className="ml-2 w-full text-3xl font-bold text-[#f8f0e5]">
           <Link href="/">Furnify!</Link>
         </h1>
 
@@ -53,6 +54,9 @@ export default function NavBar() {
                 Cart
                 <span>{c ? c : 0}</span>
               </Link>
+            </li>
+            <li className="p-4 hover:text-[#dac0a3] m-2 w-56 cursor-pointer">
+              <Link href="/furniture-editor">Design Your Room</Link>
             </li>
           </SignedIn>
         </ul>

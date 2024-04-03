@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { TfiSearch } from "react-icons/tfi";
 import { CiCircleRemove } from "react-icons/ci";
+import Modal from "../Utility/Modal";
 
 export default function FilterSearchBar() {
   const labels = ["All", "Chairs", "Beds", "Tables", "Sofas"];
@@ -16,7 +17,7 @@ export default function FilterSearchBar() {
 
   const inputRef = useRef();
 
-  const [nav, setNav] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
@@ -44,7 +45,6 @@ export default function FilterSearchBar() {
       >
         {labels.map((l) => (
           <button
-            // classNameName="m-3 p-3 rounded-xl bg-slate-500 font-bold hover:bg-slate-400"
             className="m-3 py-3 px-5 rounded-xl hover:bg-[#eadbc8] font-bold text-[#553939] border-2 border-[#553939] "
             key={labels.indexOf(l)}
             onClick={() => changeFilter(l)}
@@ -58,54 +58,26 @@ export default function FilterSearchBar() {
       <button
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
-        className="relative text-[#704f4f] md:hidden bg-[#eadbc8] hover:bg-[#dac0a3] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        className="relative shadow-md text-[#704f4f] mt-5 ml-5 md:hidden bg-[#eadbc8] hover:bg-[#dac0a3] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         type="button"
-        onClick={handleNav}
+        onClick={() => setOpen(true)}
       >
-        Dropdown button
+        Categories
       </button>
 
-      {/* <!-- Dropdown menu --> */}
-      <div
-        id="dropdown"
-        className={
-          nav
-            ? "absolute left-2 top-100% z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
-            : "z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
-        }
-      >
-        <ul
-          className="py-2 text-sm text-gray-700 dark:text-gray-200"
-          aria-labelledby="dropdownDefaultButton"
-        >
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Settings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Earnings
-            </a>
-          </li>
-        </ul>
-      </div>
+      <Modal open={open} onClose={() => setOpen(false)}>
+        {labels.map((l) => (
+          <button
+            className="m-3 py-3 px-5 rounded-xl bg-[#eadbc8] hover:bg-[#dac0a3] font-bold text-[#553939] border-2 border-[#553939] "
+            key={labels.indexOf(l)}
+            onClick={() => changeFilter(l)}
+          >
+            {l}
+          </button>
+        ))}
+      </Modal>
 
-      <div className="text-black flex flex-row gap-2 items-center w-full justify-end mr-4">
+      <div className="mt-5 mr-5 text-black flex flex-row gap-2 items-center w-full justify-end">
         <form onSubmit={searchSubmit}>
           <input
             ref={inputRef}
