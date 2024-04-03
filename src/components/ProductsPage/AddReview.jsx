@@ -7,6 +7,9 @@ export default function AddReview({ slug }) {
   const { user } = useUser();
 
   const handleAddReview = () => {
+    // also send a toast notification
+    if (reviewInputRef.current.value === "") return;
+
     client
       .create({
         _type: "reviews",
@@ -24,21 +27,19 @@ export default function AddReview({ slug }) {
   };
   return (
     <>
-      <div className="flex mx-4 mt-4 p-2 rounded-lg">
-        <form onSubmit={handleAddReview}>
-          <input
-            type="text"
-            ref={reviewInputRef}
-            name="review"
-            id="review"
-            autoComplete="off"
-            placeholder="Write a review..."
-            className="text-[#704f4f] rounded-full p-2 bg-[#eadbc8] hover:bg-[#dac0a3] shadow-md"
-          />
-        </form>
+      <div className="flex mx-4 mt-4 p-2 pb-5 rounded-lg">
+        <input
+          type="text"
+          ref={reviewInputRef}
+          name="review"
+          id="review"
+          autoComplete="off"
+          placeholder="Write a review..."
+          className="text-[#704f4f] rounded-full p-2 bg-[#eadbc8] hover:bg-[#dac0a3] shadow-md"
+        />
         <button
           onClick={handleAddReview}
-          className="text-[#553939] rounded-lg pl-4 pr-2"
+          className="text-[#553939] ml-2 rounded-full px-4 hover:text-[#a77979] hover:bg-[#eadbc8]"
         >
           Post
         </button>
@@ -46,7 +47,7 @@ export default function AddReview({ slug }) {
           onClick={() => {
             reviewInputRef.current.value = "";
           }}
-          className="text-[#553939] rounded-lg pr-4 pl-2"
+          className="text-[#553939] ml-2 rounded-full px-4 hover:text-[#a77979] hover:bg-[#eadbc8]"
         >
           Clear
         </button>

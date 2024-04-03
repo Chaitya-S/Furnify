@@ -17,7 +17,10 @@ export default function CartSummary() {
         <div className="py-3 px-3 text-[#553939]">
           Sub-Total: ₹ {getTotalPrice()}{" "}
         </div>
-        <button className="py-3 px-7 rounded-full bg-[#704f4f] border-2 border-[#472d2d] text-[#f8f0e5]">
+        <button
+          disabled={getCartCount() === 0}
+          className="py-3 px-7 rounded-full disabled:opacity-45 bg-[#704f4f] border-2 border-[#472d2d] text-[#f8f0e5]"
+        >
           Check Out
         </button>
       </div>

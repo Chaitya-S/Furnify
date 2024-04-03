@@ -24,6 +24,7 @@ export default function Home() {
       <p className="text-black text-4xl content-center text-center justify-center my-8 w-4/5">
         Designed by us....
       </p>
+      <BestSeller />
     </main>
   );
 }

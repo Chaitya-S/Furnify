@@ -3,6 +3,7 @@ import AddReview from "./AddReview";
 import { useEffect, useState } from "react";
 import { client } from "../../../sanity/lib/client";
 import { groq } from "next-sanity";
+import { montserrat } from "@/Fonts/FontMan";
 
 export default function Reviews({ allreviews, slug }) {
   const [r, setR] = useState(allreviews);
@@ -11,16 +12,20 @@ export default function Reviews({ allreviews, slug }) {
     const subscribe = client
       .listen(
         groq`*[_type == "reviews" && productslug == "${slug}"] {
-            _id,
-        username,
-        userimage, 
-        message,
-      }`
+          _id,
+          username,
+          userimage, 
+          message,
+        }`
       )
       .subscribe((update) => {
         const newR = update.result;
+
         if (newR) {
           setR((prev) => [...prev, newR]);
+        } else {
+          const updatedList = r.filter((a) => a._id != update.documentId);
+          setR([...updatedList]);
         }
       });
 
@@ -28,7 +33,6 @@ export default function Reviews({ allreviews, slug }) {
   }, [r]);
 
   const deleteReview = (review) => {
-    console.log("button click");
     client
       .delete(review._id)
       .then(() => {
@@ -41,7 +45,7 @@ export default function Reviews({ allreviews, slug }) {
   };
 
   return (
-    <div>
+    <div className={`${montserrat}`}>
       <AddReview slug={slug} />
       {r.map((review) => (
         <Review key={review._id} deleteReview={deleteReview} review={review} />
