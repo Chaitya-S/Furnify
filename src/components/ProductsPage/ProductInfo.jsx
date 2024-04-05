@@ -41,7 +41,6 @@ const ProductInfo = ({ p }) => {
           product={p}
         />
       </div>
-      {isAdded && <div>delete</div>}
     </>
   );
 };

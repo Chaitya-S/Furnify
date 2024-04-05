@@ -28,6 +28,14 @@ export default function Footer() {
                 About
               </Link>
             </li>
+            <li>
+              <Link
+                href="/furniture-editor"
+                className="hover:underline me-4 md:me-6"
+              >
+                Design Your Room
+              </Link>
+            </li>
           </ul>
         </div>
         <hr className="my-6 border-[#f8f0e5] sm:mx-auto lg:my-8" />

@@ -71,7 +71,9 @@ function About() {
         the home of your dreams!
       </p>
 
-      <ProfileCard name="Bhavya Jain" designation="Timepass" />
+      <ProfileCard name="Bhavya Jain" designation="3D Artist" />
+      <ProfileCard name="Chaitya Shah" designation="Mastermind" />
+      <ProfileCard name="Krish Patel" designation="Creative Genius" />
     </>
   );
 }

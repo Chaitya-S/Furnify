@@ -58,7 +58,7 @@ export default function FilterSearchBar() {
       <button
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
-        className="relative shadow-md text-[#704f4f] mt-5 ml-5 md:hidden bg-[#eadbc8] hover:bg-[#dac0a3] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        className="shadow-md text-[#704f4f] mt-5 ml-5 md:hidden bg-[#eadbc8] hover:bg-[#dac0a3] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         type="button"
         onClick={() => setOpen(true)}
       >
@@ -77,7 +77,7 @@ export default function FilterSearchBar() {
         ))}
       </Modal>
 
-      <div className="mt-5 mr-5 text-black flex flex-row gap-2 items-center w-full justify-end">
+      <div className="mt-5 mr-5 text-[#553939] flex flex-row gap-2 items-center w-full justify-end">
         <form onSubmit={searchSubmit}>
           <input
             ref={inputRef}

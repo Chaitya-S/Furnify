@@ -37,7 +37,7 @@ export default function AddReview({ slug }) {
           id="review"
           autoComplete="off"
           placeholder="Write a review..."
-          className="text-[#704f4f] rounded-full p-2 bg-[#eadbc8] hover:bg-[#dac0a3] shadow-md"
+          className="text-[#704f4f] rounded-full p-2 bg-[#eadbc8] hover:bg-[#dac0a3] shadow-md w-[800px] h-[50px]"
         />
         <button
           onClick={handleAddReview}

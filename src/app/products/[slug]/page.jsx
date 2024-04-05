@@ -40,7 +40,7 @@ export default async function Product({ params }) {
   return (
     <>
       <div>
-        <div className="grid grid-flow-row md:grid-cols-3 justify-items-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] gap-4 items-center pt-6 text-black mb-6">
+        <div className="grid grid-flow-row md:grid-cols-3 justify-items-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] gap-4 items-center pt-6 text-black mb-6 ml-6">
           <SplineCard url={p.splineurl} />
           <ProductInfo p={p} />
         </div>

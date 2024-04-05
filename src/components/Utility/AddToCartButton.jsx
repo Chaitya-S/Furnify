@@ -2,10 +2,17 @@ import { useEffect } from "react";
 import { useCart } from "../CartContext";
 import { FaCartPlus } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { MdDelete } from "react-icons/md";
 
 export default function AddToCartButton({ product, isAdded, setIsAdded }) {
-  const { incrementQuantity, decrementQuantity, addToCart, getQuantity, cart } =
-    useCart();
+  const {
+    incrementQuantity,
+    decrementQuantity,
+    addToCart,
+    getQuantity,
+    cart,
+    removeFromCart,
+  } = useCart();
 
   const handleAddToCart = () => {
     toast.success(`Added ${product.name} to cart!`);
@@ -47,6 +54,17 @@ export default function AddToCartButton({ product, isAdded, setIsAdded }) {
           >
             -
           </button>
+          {isAdded && (
+            <button
+              className={`self-end p-2 text-2xl text-[#553939] border-[#553939] hover:bg-[#eadbc8]`}
+              onClick={() => {
+                toast.success(`${product.name} removed from cart`);
+                removeFromCart(product._id);
+              }}
+            >
+              <MdDelete />
+            </button>
+          )}
         </div>
       ) : (
         <button

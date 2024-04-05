@@ -4,7 +4,26 @@ import { ivymode } from "@/Fonts/FontMan";
 import { useCart } from "../CartContext";
 
 export default function CartSummary() {
-  const { getTotalPrice, getCartCount } = useCart();
+  const { getTotalPrice, getCartCount, cart } = useCart();
+
+  const handleCheckout = async () => {
+    await fetch("http://localhost:3000/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ products: cart }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.url) {
+          window.location.href = res.url;
+        }
+      });
+  };
 
   return (
     <div
@@ -19,6 +38,7 @@ export default function CartSummary() {
         </div>
         <button
           disabled={getCartCount() === 0}
+          onClick={handleCheckout}
           className="py-3 px-7 rounded-full disabled:opacity-45 bg-[#704f4f] border-2 border-[#472d2d] text-[#f8f0e5]"
         >
           Check Out

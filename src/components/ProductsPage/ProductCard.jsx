@@ -52,17 +52,6 @@ export default function ProductCard({ product }) {
             />
           </SignedIn>
         </div>
-        {isAdded && (
-          <button
-            className={`self-end mt-2 p-2 ${montserrat} text-2xl text-[#553939] border-[#553939] hover:bg-[#eadbc8]`}
-            onClick={() => {
-              toast.success(`${product.name} removed from cart`);
-              removeFromCart(product._id);
-            }}
-          >
-            <MdDelete />
-          </button>
-        )}
       </div>
     </div>
   );

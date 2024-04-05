@@ -48,15 +48,15 @@ export default function NavBar() {
             <Link href="/about">About</Link>
           </li>
           <SignedIn>
+            <li className="p-4 hover:text-[#dac0a3] m-2 w-56 cursor-pointer">
+              <Link href="/furniture-editor">Design Your Room</Link>
+            </li>
             <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
               <Link className="flex gap-2 items-center" href="/cart">
                 <FaCartShopping />
                 Cart
-                <span>{c ? c : 0}</span>
+                <span>({c ? c : 0})</span>
               </Link>
-            </li>
-            <li className="p-4 hover:text-[#dac0a3] m-2 w-56 cursor-pointer">
-              <Link href="/furniture-editor">Design Your Room</Link>
             </li>
           </SignedIn>
         </ul>
@@ -87,26 +87,36 @@ export default function NavBar() {
           }
         >
           {/* Mobile Logo */}
-          <h1 className="bg-[#561c24] w-full text-3xl p-4 font-bold text-[#f8f0e5]">
-            Furnify!
-          </h1>
+          <div className="flex flex-row bg-[#561c24]">
+            <img
+              src="/images/logo.png"
+              className="m-4 h-10"
+              alt="Furnify Logo"
+            />
+            <h1 className="bg-[#561c24] w-full text-3xl py-4 font-bold text-[#f8f0e5]">
+              Furnify!
+            </h1>
+          </div>
 
           {/* Mobile Navigation Items */}
-          <li className="p-4 mt-4 duration-300 text-black cursor-pointer">
+          <li className="p-4 mt-4 duration-300 text-[#553939] cursor-pointer">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 duration-300 text-black cursor-pointer">
+          <li className="p-4 duration-300 text-[#553939] cursor-pointer">
             <Link href="/products?category=all">Products</Link>
           </li>
-          <li className="p-4 duration-300 text-black cursor-pointer">
+          <li className="p-4 duration-300 text-[#553939] cursor-pointer">
             <Link href="/about">About</Link>
           </li>
           <SignedIn>
-            <li className="p-4 text-black hover:text-[#dac0a3] m-2 cursor-pointer">
+            <li className="p-4 text-[#553939] m-2 cursor-pointer">
+              <Link href="/furniture-editor">Design Your Room</Link>
+            </li>
+            <li className="p-4 text-[#553939] hover:text-[#dac0a3] m-2 cursor-pointer">
               <Link className="flex gap-2 items-center" href="/cart">
                 <FaCartShopping />
                 Cart
-                <span>{c ? c : 0}</span>
+                <span>({c ? c : 0})</span>
               </Link>
             </li>
           </SignedIn>

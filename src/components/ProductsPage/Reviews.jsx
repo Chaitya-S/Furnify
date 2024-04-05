@@ -45,7 +45,7 @@ export default function Reviews({ allreviews, slug }) {
   };
 
   return (
-    <div className={`${montserrat}`}>
+    <div className={`${montserrat} px-7`}>
       <AddReview slug={slug} />
       {r.map((review) => (
         <Review key={review._id} deleteReview={deleteReview} review={review} />
