@@ -7,6 +7,7 @@ import { SignedIn } from "@clerk/nextjs";
 import AddToCartButton from "../Utility/AddToCartButton";
 import { useCart } from "../CartContext";
 import { useState } from "react";
+import { MdDelete } from "react-icons/md";
 import toast from "react-hot-toast";
 
 export default function ProductCard({ product }) {
@@ -14,15 +15,20 @@ export default function ProductCard({ product }) {
   const { removeFromCart } = useCart();
 
   return (
-    <div className="bg-[#dac0a3] w-full max-w-sm border border-[#dac0a3] rounded-lg shadow-lgs hover:shadow-2xl">
+    <div className="bg-[#dac0a3] hover:scale-105 w-full max-w-sm border border-[#dac0a3] rounded-lg shadow-lgs hover:shadow-2xl">
       <div
         style={{ height: "360px", width: "100%" }}
         className="flex justify-center items-center shadow-md"
       >
-        <img
-          src={urlForImage(product.image)}
-          style={{ height: "90%", width: "90%", objectFit: "fill" }}
-        />
+        <Link
+          style={{ height: "90%", width: "90%" }}
+          href={`products/${product.slug}`}
+        >
+          <img
+            style={{ height: "100%", width: "100%", objectFit: "fill" }}
+            src={urlForImage(product.image)}
+          />
+        </Link>
       </div>
       <div className="mt-3 px-5 pb-5">
         <Link href={`/products/${product.slug}`}>
@@ -48,13 +54,13 @@ export default function ProductCard({ product }) {
         </div>
         {isAdded && (
           <button
-            className={`self-end mt-2 px-2 ${montserrat} text-md text-[#553939] border-2 rounded-lg border-[#553939] hover:bg-[#eadbc8]`}
+            className={`self-end mt-2 p-2 ${montserrat} text-2xl text-[#553939] border-[#553939] hover:bg-[#eadbc8]`}
             onClick={() => {
               toast.success(`${product.name} removed from cart`);
               removeFromCart(product._id);
             }}
           >
-            Remove
+            <MdDelete />
           </button>
         )}
       </div>

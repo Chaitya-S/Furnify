@@ -4,8 +4,6 @@ import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Utility/Provider";
 import Footer from "@/components/Footer";
 
-// import { CartProvider } from "../components/CartContext";
-
 // TODO ADD GOOD METDATA
 export const metadata = {
   title: "Furnify!",

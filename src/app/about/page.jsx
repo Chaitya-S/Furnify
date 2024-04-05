@@ -61,7 +61,7 @@ function About() {
           </p>
         </div>
         <div className="invisible md:visible">
-          <Image src="/images/about.png" height={400} width={400} />
+          <Image alt="image" src="/images/about.png" height={400} width={400} />
         </div>
       </div>
       <p
@@ -71,7 +71,7 @@ function About() {
         the home of your dreams!
       </p>
 
-      <ProfileCard />
+      <ProfileCard name="Bhavya Jain" designation="Timepass" />
     </>
   );
 }

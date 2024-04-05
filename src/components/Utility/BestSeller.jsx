@@ -11,9 +11,13 @@ export default async function BestSeller() {
     }`);
 
   return (
-    <div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 m-6 p-4 bg-[#eadbc8]">
       {products.map((p) => (
-        <img key={p._id} src={urlForImage(p.image)} />
+        <img
+          key={p._id}
+          src={urlForImage(p.image)}
+          className="shadow-lg hover:shadow-2xl hover:scale-105 border-2 border-[#eadbc8]"
+        />
       ))}
     </div>
   );

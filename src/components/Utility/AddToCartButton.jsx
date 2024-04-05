@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useCart } from "../CartContext";
 import { FaCartPlus } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -6,8 +6,6 @@ import toast from "react-hot-toast";
 export default function AddToCartButton({ product, isAdded, setIsAdded }) {
   const { incrementQuantity, decrementQuantity, addToCart, getQuantity, cart } =
     useCart();
-
-  // const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
     toast.success(`Added ${product.name} to cart!`);
@@ -43,7 +41,7 @@ export default function AddToCartButton({ product, isAdded, setIsAdded }) {
             className="bg-[#553939] hover:bg-[#704f4f] text-base border-secondary rounded-md py-2 px-3 text-center font-medium text-[#dac0a3] hover:text-[#eadbc8]"
             onClick={() => {
               if (getQuantity(product) === 1)
-                toast.success(`Removed ${product.name} from cart.`);
+                toast.error(`Removed ${product.name} from cart.`);
               decrementQuantity(product._id);
             }}
           >

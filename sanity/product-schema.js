@@ -19,6 +19,12 @@ export const product = defineType({
       },
     },
     {
+      name: "colors",
+      title: "Colours",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
       name: "category",
       title: "Category",
       type: "string",

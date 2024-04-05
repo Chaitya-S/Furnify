@@ -42,7 +42,7 @@ export default function ImageSlider({ images }) {
   }, []);
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 p-8 shadow-lg bg-[#eadbc8]">
       {/* Slider */}
       <div
         ref={sliderRef}
@@ -70,9 +70,9 @@ export default function ImageSlider({ images }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className="h-0.5 relative bg-gray-300" style={{ width: "80vw" }}>
+      <div className="h-0.5 relative bg-[#a77979]" style={{ width: "80vw" }}>
         <div
-          className="h-0.5 absolute top-0 left-0 bg-gray-500"
+          className="h-0.5 absolute top-0 left-0 bg-[#553939]"
           style={{
             width: `${indicatorWidthPercent}%`,
             left: `${indicatorWidthPercent * currentSlideIndex}%`,
