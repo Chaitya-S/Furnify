@@ -9,6 +9,7 @@ export default async function BestSeller() {
       image,
       name,
       price,
+      slug,
   }`);
 
   return <BestSellerGrid products={products} />;

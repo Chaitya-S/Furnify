@@ -1,8 +1,9 @@
 "use client";
 
 import { montserrat } from "@/Fonts/FontMan";
-import Spline from "@splinetool/react-spline";
-import { useRef } from "react";
+import React, { useRef, Suspense } from "react";
+
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 export default function FurnitureEditor() {
   const spline = useRef();
@@ -65,12 +66,20 @@ export default function FurnitureEditor() {
 
   return (
     <div>
-      <Spline
-        onLoad={onLoad}
-        scene="https://prod.spline.design/9EAC3CKE95KEsQLv/scene.splinecode"
-        className="p-8"
-      />
-      <div className={`flex flex-row justify-center ${montserrat}`}>
+      <Suspense
+        fallback={
+          <div className="w-[100vw] text-black h-screen flex justify-center items-center text-4xl">
+            LOADING
+          </div>
+        }
+      >
+        <Spline
+          onLoad={onLoad}
+          scene="https://prod.spline.design/9EAC3CKE95KEsQLv/scene.splinecode"
+          className="pt-8 p-6"
+        />
+      </Suspense>
+      <div className={`flex flex-wrap justify-center ${montserrat}`}>
         {buttons.map((b) => (
           <button
             key={b.splName}
@@ -81,17 +90,17 @@ export default function FurnitureEditor() {
           </button>
         ))}
       </div>
-      {/* <div className={`text-[#553939] mt-8 ${montserrat}`}>
+      <div
+        className={`flex flex-col items-center justify-center text-[#553939] mt-8 ${montserrat}`}
+      >
         <p className="flex justify-center text-3xl">Instructions</p>
-        <ul className="mx-8 pb-8 list-disc flex-col">
-          <li className="text-xl absolute left-[500px]">
+        <ul className="my-2 mx-8 pb-8 list-disc">
+          <li className="text-xl">
             Use the above buttons to add or remove an object
           </li>
-          <li className="text-xl absolute left-[500px] top-[100px]">
-            Use one finger to rotate room
-          </li>
+          <li className="text-xl">Use one finger to rotate room</li>
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function BestSellerGrid({ products }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`bg-[#553939] max-w-sm rounded-lg shadow m-3 p-3 duration-1000 transition-all ${
+            className={`bg-[#eadbc8] max-w-sm rounded-lg shadow m-3 p-3 duration-1000 transition-all ${
               open ? "scale-100 opacity-100" : "scale-125 opacity-0 "
             }`}
           >
@@ -45,22 +45,22 @@ export default function BestSellerGrid({ products }) {
             >
               X
             </button>
-            <Link href="/">
-              <img
-                className="rounded-t-lg"
-                src={urlForImage(data.image)}
-                alt=""
-              />
-            </Link>
+            <img
+              className="rounded-t-lg"
+              src={urlForImage(data.image)}
+              alt=""
+            />
             <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-2 text-3xl font-bold text-[#553939]">
                 {data.name}
               </h5>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {data.price}
+              <p className="mb-3 text-[#553939] text-xl font-semibold">
+                ₹{data.price}
               </p>
-              <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                View Product
+              <button className="inline-flex items-center px-3 py-2 text-lg font-semibold text-center text-[#553939] bg-[#f8f0e5] rounded-lg hover:bg-opacity-50 focus:ring-4 focus:outline-none">
+                <Link href={`/products/${data.slug.current}`}>
+                  View Product
+                </Link>
               </button>
             </div>
           </div>
