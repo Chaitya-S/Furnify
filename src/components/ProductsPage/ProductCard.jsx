@@ -5,17 +5,18 @@ import { urlForImage } from "../../../sanity/lib/image";
 import { ivymode, montserrat } from "@/Fonts/FontMan";
 import { SignedIn } from "@clerk/nextjs";
 import AddToCartButton from "../Utility/AddToCartButton";
-import { useCart } from "../CartContext";
 import { useState } from "react";
-import { MdDelete } from "react-icons/md";
-import toast from "react-hot-toast";
+import { motion } from "framer-motion";
 
 export default function ProductCard({ product }) {
   const [isAdded, setIsAdded] = useState(false);
-  const { removeFromCart } = useCart();
 
   return (
-    <div className="bg-[#dac0a3] hover:scale-105 w-full max-w-sm border border-[#dac0a3] rounded-lg shadow-lgs hover:shadow-2xl">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, transition: { duration: 1 } }}
+      className="bg-[#dac0a3] hover:scale-105 w-full max-w-sm border border-[#dac0a3] rounded-lg shadow-lgs hover:shadow-2xl"
+    >
       <div
         style={{ height: "360px", width: "100%" }}
         className="flex justify-center items-center shadow-md"
@@ -53,6 +54,6 @@ export default function ProductCard({ product }) {
           </SignedIn>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -20,13 +20,14 @@ const ProductInfo = ({ p }) => {
         </div>
         <span className="md:my-8"></span>
         <div className={`${montserrat}`}>
+          <div className="m-2 text-2xl">Colors : </div>
           {colors.map((c) => (
             <button
               key={c}
               className={
                 activeColor === c
-                  ? "bg-slate-200  mx-2 p-4 rounded-lg"
-                  : "border-2 border-black mx-2 p-4 rounded-lg"
+                  ? "bg-[#dac0a3] mx-2 p-4 rounded-lg border-2 border-[#553939]"
+                  : "border-2 border-[#553939] hover:bg-[#eadbc8] m-2 p-4 rounded-lg"
               }
               onClick={() => setActiveColor(c)}
             >

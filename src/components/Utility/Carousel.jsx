@@ -70,7 +70,7 @@ export default function ImageSlider({ images }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className="h-0.5 bg-[#a77979]" style={{ width: "80vw" }}>
+      <div className="h-0.5 bg-black" style={{ width: "80vw" }}>
         <div
           className="h-0.5 absolute top-0 left-0 bg-[#553939]"
           style={{

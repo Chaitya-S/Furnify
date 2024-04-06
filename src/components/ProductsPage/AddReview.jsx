@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { client } from "../../../sanity/lib/client";
 import { useUser } from "@clerk/nextjs";
+import { toast } from "react-hot-toast";
 
 export default function AddReview({ slug }) {
   const reviewInputRef = useRef();
@@ -10,7 +11,10 @@ export default function AddReview({ slug }) {
 
   const handleAddReview = () => {
     // also send a toast notification
-    if (reviewInputRef.current.value === "") return;
+    if (reviewInputRef.current.value === "") {
+      toast.error("Review message is empty!! Can't Post");
+      return;
+    }
 
     client
       .create({
@@ -20,8 +24,8 @@ export default function AddReview({ slug }) {
         message: reviewInputRef.current.value,
         productslug: slug,
       })
-      .then((res) => {
-        console.log(`Review created with id = ${res._id}`);
+      .then(() => {
+        toast.success("Review Posted!");
       });
 
     reviewInputRef.current.value = "";

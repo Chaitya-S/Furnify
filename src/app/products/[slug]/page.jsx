@@ -2,10 +2,8 @@
 import { groq } from "next-sanity";
 import { client } from "../../../../sanity/lib/client";
 import SplineCard from "@/components/ProductsPage/SplineCard";
-import AddToCartButton from "@/components/Utility/AddToCartButton";
-import { ivymode, montserrat } from "@/Fonts/FontMan";
+import { montserrat } from "@/Fonts/FontMan";
 import Reviews from "@/components/ProductsPage/Reviews";
-import AddReview from "@/components/ProductsPage/AddReview";
 import ProductInfo from "@/components/ProductsPage/ProductInfo";
 
 async function getData(params) {
@@ -40,7 +38,7 @@ export default async function Product({ params }) {
   return (
     <>
       <div>
-        <div className="grid grid-flow-row md:grid-cols-3 justify-items-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] gap-4 items-center pt-6 text-black mb-6 ml-6">
+        <div className="grid grid-flow-row md:grid-cols-3 justify-items-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] gap-4 items-center pt-6 text-[#553939] mb-6 ml-6">
           <SplineCard url={p.splineurl} />
           <ProductInfo p={p} />
         </div>
