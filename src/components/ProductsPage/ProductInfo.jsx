@@ -10,7 +10,7 @@ const ProductInfo = ({ p }) => {
   return (
     <>
       <div
-        className={`flex flex-row md:flex-col justify-start ${ivymode} gap-4 my-4 md:my-0`}
+        className={`flex flex-wrap md:flex-nowrap flex-row md:flex-col justify-start ${ivymode} gap-4 my-4 md:my-0`}
       >
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#553939]">
@@ -21,6 +21,9 @@ const ProductInfo = ({ p }) => {
         <span className="md:my-8"></span>
         <div className={`${montserrat}`}>
           <div className="m-2 text-2xl">Colors </div>
+          <div className="m-2 text-sm md:text-md">
+            Explore/Change Colors in the 3D view
+          </div>
           {colors.map((c) => (
             <button
               key={c}

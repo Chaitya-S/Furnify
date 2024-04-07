@@ -49,13 +49,13 @@ export default function Home() {
           <div className="text-[#986a4d] text-2xl grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 md:m-6">
             <Link
               href="products?category=all"
-              className="bg-[#f8f0e5] text-3xl text-[#472d2d] rounded-lg hover:bg-[#eadbc8] py-6 flex flex-col justify-center items-center ml-2"
+              className="bg-[#f8f0e5] text-3xl text-[#472d2d] rounded-lg hover:bg-[#eadbc8] py-6 flex flex-col justify-center items-center ml-2 md:m-0"
             >
               All
             </Link>
             <Link
               href="/products?category=chair"
-              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2 md:m-0"
             >
               <div className="flex justify-center mt-2 md:my-2">
                 <TbArmchair2 />
@@ -66,7 +66,7 @@ export default function Home() {
             </Link>
             <Link
               href="products?category=bed"
-              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 md:m-0"
             >
               <div className="flex justify-center mt-2 md:my-2">
                 <IoBedOutline />
@@ -77,7 +77,7 @@ export default function Home() {
             </Link>
             <Link
               href="products?category=table"
-              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2 md:m-0"
             >
               <div className="flex justify-center mt-2 md:my-2">
                 <MdOutlineTableBar />
@@ -88,7 +88,7 @@ export default function Home() {
             </Link>
             <Link
               href="products?category=sofa"
-              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 mb-2"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 mb-2 md:m-0"
             >
               <div className="flex justify-center mt-2 md:my-2">
                 <PiCouchLight />

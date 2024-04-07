@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Furnify!
 
-## Getting Started
+#### Description:
 
-First, run the development server:
+Introducing a game-changing 3D furniture experience website. Our platform redefines online shopping, offering immersive visualization and interactive features for unparalleled user engagement and satisfaction.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##### Track - Web Development
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##### Contributors - Chaitya Shah, Bhavya Jain, Krish Patel
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Problem Statement
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Developing an Interactive 3D Furniture Visualization Platform to Address the Limitations of Traditional Online Shopping Experiences.
 
-## Learn More
+## Goal
 
-To learn more about Next.js, take a look at the following resources:
+To create a user-friendly website that revolutionizes the online furniture shopping experience by offering immersive 3D visualization, enabling users to virtually explore furniture items from different angles, sizes, and configurations, ultimately enhancing user engagement and satisfaction.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Interactive 3D Models: Allow users to rotate, zoom, and interact with
+  3D models of furniture items to examine details from all angles.
+- Design Your Room: The most standout feature of the website that allows users to place and edit furniture enabling customization of their room.
+- Customization Options: Enable users to customize furniture colors to match their preferences.
+- Category Bar and Search Functionality to explore all products.
+- Cross-Platform Compatibility: Ensure compatibility across various devices and browsers, including desktops, laptops, tablets, and smartphones.
+- Realtime Review System to enable users to share their experiences with the furniture.
+- Fully Functioning Cart System allowing users to add/remove products and increment/decrement their quantities
+- User Accounts and Profiles: Provide users with the option to create accounts, access cart functionality and our hero feature "Design Your Room"
+- Seamless Checkout Process: Streamline the purchasing journey with a user-friendly checkout process that integrates secure payment options and order tracking.
+- Interative Home page with animations, carousel and a bestseller - interactive grid
+- A dedicated about us page highlighting journey of the brand.
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The tech stack used is Next.Js 14 with Sanity as the content management system, Clerk for authentication and Stripe for payment integration.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## How To Run?
+
+- Clone the repository
+- Change directory to the folder
+- Run `npm install`
+- For the project to run, you will need to configure sanity and stripe and use the following environment variables in a .env file:
+  ` NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+ CLERK_SECRET_KEY=
+ NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+NEXT_PUBLIC_SANITY_USER_ADDER_TOKEN=
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=
+STRIPE_SECRET=`
+- Then run the development server: `npm run dev`
+- open `http://localhost:3000/`
+
+## Deployment
+
+https://furnify-drab.vercel.app/
+
+## Applications of our idea
+
+- E-commerce Integration: Partnering with furniture retailers to integrate your 3D platform into their websites, enhancing their online shopping experience.
+- Interior Design Services: Offering your platform as a tool for interior designers to visualize furniture placements and designs for their clients.
+- Real Estate Staging: Providing real estate agencies with the ability
+  to virtually stage properties with furniture, helping potential
+  buyers visualize living spaces.
+- Education and Training: Developing educational resources or training
+  programs for furniture design students or professionals to learn
+  about 3D visualization techniques and user experience design.
+
+## Further Improvements
+
+- Extending the existing 3D ecosystem to an AR/VR environment
+- Implementing a Product Rating system
+- Use of animations
+- Adding acknowlegement of user's selected colors while checking out
+
+## Demo Video
+
+https://youtu.be/KjJ8qSv-ucE
+
+#### Note:
+
+Please sign-in and explore the website to ensure seamless experience of the website.
+
+Pages sometimes may take time to load. Please be patient 🙏
+(try opening link in another tab)
+
+To simulate checkout system, please use the following credentials:
+Card No. : 4000003560000008
+CVV: 123
+Card Expiry: 12/34
+
+and use any email and name.
+
+#### by team Hehe boi ✌

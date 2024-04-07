@@ -39,17 +39,25 @@ export default function NavBar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex">
           <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
-            <Link href="/">Home</Link>
+            <Link className="py-4" href="/">
+              Home
+            </Link>
           </li>
           <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
-            <Link href="/products?category=all">Products</Link>
+            <Link className="py-4" href="/products?category=all">
+              Products
+            </Link>
           </li>
           <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
-            <Link href="/about">About</Link>
+            <Link className="py-4" href="/about">
+              About
+            </Link>
           </li>
           <SignedIn>
             <li className="p-4 hover:text-[#dac0a3] m-2 w-56 cursor-pointer">
-              <Link href="/furniture-editor">Design Your Room</Link>
+              <Link className="py-4" href="/furniture-editor">
+                Design Your Room
+              </Link>
             </li>
             <li className="p-4 hover:text-[#dac0a3] m-2 cursor-pointer">
               <Link className="flex gap-2 items-center" href="/cart">

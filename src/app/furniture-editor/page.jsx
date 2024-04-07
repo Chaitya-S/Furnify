@@ -99,6 +99,7 @@ export default function FurnitureEditor() {
             Use the above buttons to add or remove an object
           </li>
           <li className="text-xl">Use one finger to rotate room</li>
+          <li className="text-xl">Tap on object in 3D scene to rotate</li>
         </ul>
       </div>
     </div>

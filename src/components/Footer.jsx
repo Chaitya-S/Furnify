@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
         <hr className="my-6 border-[#f8f0e5] sm:mx-auto lg:my-8" />
         <span className="block text-sm text-[#f8f0e5] sm:text-center">
-          © 2024
+          © 2024{" "}
           <Link href="/" className="hover:underline me-4 md:me-6">
             Furnify!™
           </Link>
