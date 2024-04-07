@@ -23,8 +23,8 @@ export default function Home() {
       <div className="sm:w-full md:w-3/5 lg:w-5/6 mt-4">
         <Suspense
           fallback={
-            <div className="flex justify-center items-center text-4xl">
-              LOADING
+            <div className="flex justify-center items-center text-4xl text-[#553939]">
+              LOADING...
             </div>
           }
         >
@@ -33,12 +33,11 @@ export default function Home() {
       </div>
 
       <p className="text-[#a77979] text-4xl md:text-6xl content-center text-center justify-center mt-4 mb-8 w-4/5">
-        'A <span className="text-[#6d2932]">revolutionary</span> online
-        <span className="text-[#6d2932]"> 3D </span> experience furniture
-        store.'
+        A <span className="text-[#6d2932]">revolutionary</span> online
+        <span className="text-[#6d2932]"> 3D </span> experience furniture store.
       </p>
 
-      <span className="h-[175px]"></span>
+      {/* <span className="h-[175px]"></span> */}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 md:m-6 w-[90vw]">
         <div className={`col-span-2 w-full rounded-lg bg-white ${montserrat}`}>

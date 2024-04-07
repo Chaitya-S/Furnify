@@ -14,19 +14,19 @@ function About() {
           </p>
           <h1 className={`text-3xl mb-4 ${ivymode}`}>Our Story</h1>
           <p className={`my-9 ${montserrat}`}>
-            At Furnify, we believe that furniture isn't just about function –
-            it's about transforming spaces and creating experiences. Our journey
-            began 5th April, 2024 with a passion for craftsmanship and a vision
-            to redefine the way people furnish their homes. Since then, we've
-            grown into a trusted name in the industry, known for our commitment
-            to quality, style, and exceptional customer service.
+            At Furnify, we believe that furniture isn&apos;t just about function
+            – it&apos;s about transforming spaces and creating experiences. Our
+            journey began 5th April, 2024 with a passion for craftsmanship and a
+            vision to redefine the way people furnish their homes. Since then,
+            we&apos;ve grown into a trusted name in the industry, known for our
+            commitment to quality, style, and exceptional customer service.
           </p>
           <h1 className={`text-3xl mb-4 ${ivymode}`}>Our Mission</h1>
           <p className={`my-9 ${montserrat}`}>
             Our mission at Furnify is simple: to inspire and empower individuals
-            to create spaces they love. Whether you're furnishing a cozy
-            apartment, a family home, or a stylish office, we're here to help
-            you bring your vision to life. We believe that every piece of
+            to create spaces they love. Whether you&apos;re furnishing a cozy
+            apartment, a family home, or a stylish office, we&apos;re here to
+            help you bring your vision to life. We believe that every piece of
             furniture tells a story and that your home should reflect your
             unique personality and lifestyle.
           </p>
