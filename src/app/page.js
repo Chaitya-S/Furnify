@@ -23,7 +23,7 @@ export default function Home() {
       <div className="sm:w-full md:w-3/5 lg:w-5/6 mt-4">
         <Suspense
           fallback={
-            <div className="w-[100vw] h-[100vh] flex justify-center items-center text-4xl">
+            <div className="flex justify-center items-center text-4xl">
               LOADING
             </div>
           }

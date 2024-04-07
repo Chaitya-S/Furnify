@@ -63,12 +63,16 @@ export default function NavBar() {
         <ul>
           <SignedIn>
             <li className="rounded-full ring-4 p-0 m-2 cursor-pointer">
-              {isLoaded ? <UserButton /> : <AiOutlineLoading />}
+              {isLoaded ? (
+                <UserButton afterSignOutUrl="http://localhost:3000/" />
+              ) : (
+                <AiOutlineLoading />
+              )}
             </li>
           </SignedIn>
           <SignedOut>
             <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
-              <Link href="/signed-in">Sign In</Link>
+              <Link href="/sign-in">Sign In</Link>
             </li>
           </SignedOut>
         </ul>
