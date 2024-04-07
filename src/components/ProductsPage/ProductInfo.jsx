@@ -20,7 +20,7 @@ const ProductInfo = ({ p }) => {
         </div>
         <span className="md:my-8"></span>
         <div className={`${montserrat}`}>
-          <div className="m-2 text-2xl">Colors : </div>
+          <div className="m-2 text-2xl">Colors </div>
           {colors.map((c) => (
             <button
               key={c}

@@ -71,7 +71,8 @@ export default function NavBar() {
             </li>
           </SignedIn>
           <SignedOut>
-            <li className="p-4 hover:text-[#dac0a3] rounded-xl m-2 cursor-pointer duration-300">
+            {/* <li className="hover:text-[#dac0a3] w-8 m-2 cursor-pointer"> */}
+            <li className="p-4 hover:text-[#dac0a3] m-2 w-28 cursor-pointer">
               <Link href="/sign-in">Sign In</Link>
             </li>
           </SignedOut>

@@ -103,16 +103,17 @@ export default function Home() {
           className="bg-cover bg-center rounded-lg md:w-[30vw] md:h-[30vw] w-[420px] h-[420px]"
           style={{ backgroundImage: 'url("/images/room.jpg")' }}
         >
-          <button className="flex flex-row justify-center md:w-[30vw] md:h-[30vw] w-[420px] h-[420px] absolute bg-gray-900/40 md:bg-gray-900/70 md:hover:bg-gray-900/40 transition-all duration-300 rounded-lg items-center p-2">
-            <Link href="/furniture-editor">
-              <span className="flex self-center text-4xl font-medium text-white">
-                Design Your Room
-                <span>
-                  <SlArrowRightCircle className="mt-1 ml-2" />
-                </span>
+          <Link
+            href="/furniture-editor"
+            className="flex flex-row justify-center md:w-[30vw] md:h-[30vw] w-[420px] h-[420px] absolute bg-gray-900/40 md:bg-gray-900/70 md:hover:bg-gray-900/40 transition-all duration-300 rounded-lg items-center p-2"
+          >
+            <span className="flex self-center text-4xl font-medium text-white">
+              Design Your Room
+              <span>
+                <SlArrowRightCircle className="mt-1 ml-2" />
               </span>
-            </Link>
-          </button>
+            </span>
+          </Link>
         </div>
       </div>
 
