@@ -60,20 +60,49 @@ function About() {
             inbox.
           </p>
         </div>
-        <div className="invisible md:visible">
-          <Image alt="image" src="/images/about.png" height={400} width={400} />
+        <div className="invisible h-0 md:visible grayscale m-4 mt-20">
+          <Image
+            alt="image"
+            src="/about.jpg"
+            height={400}
+            width={400}
+            className="rounded-md"
+          />
         </div>
       </div>
       <p
-        className={`${montserrat} text-xl pb-9 text-[#553939] flex-row text-center`}
+        className={`${montserrat} text-2xl pb-9 text-[#553939] flex-row text-center`}
       >
         Thank you for choosing Furnify. We look forward to helping you create
         the home of your dreams!
       </p>
+      <div className="visible md:invisible md:h-0 flex justify-center grayscale">
+        <Image
+          alt="image"
+          src="/about.jpg"
+          height={400}
+          width={400}
+          className="rounded-md"
+        />
+      </div>
 
-      <ProfileCard name="Bhavya Jain" designation="3D Artist" />
-      <ProfileCard name="Chaitya Shah" designation="Mastermind" />
-      <ProfileCard name="Krish Patel" designation="Creative Genius" />
+      <div className="flex md:flex-row flex-col pb-4 mb-1">
+        <ProfileCard
+          image="/profile/bhax.jpg"
+          name="Bhavya Jain"
+          designation="😭"
+        />
+        <ProfileCard
+          image="/profile/chax.jpg"
+          name="Chaitya Shah"
+          designation="😎"
+        />
+        <ProfileCard
+          image="/profile/pat.jpg"
+          name="Krish Patel"
+          designation="😃"
+        />
+      </div>
     </>
   );
 }

@@ -7,7 +7,7 @@ export default function CartSummary() {
   const { getTotalPrice, getCartCount, cart } = useCart();
 
   const handleCheckout = async () => {
-    await fetch("http://localhost:3000/api/checkout", {
+    await fetch("https://furnify-drab.vercel.app/api/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

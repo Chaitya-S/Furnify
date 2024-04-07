@@ -33,11 +33,10 @@ export default function Home() {
       </div>
 
       <p className="text-[#a77979] text-4xl md:text-6xl content-center text-center justify-center mt-4 mb-8 w-4/5">
-        A <span className="text-[#6d2932]">revolutionary</span> online
-        <span className="text-[#6d2932]"> 3D </span> experience furniture store.
+        &apos;A <span className="text-[#6d2932]">revolutionary</span> online
+        <span className="text-[#6d2932]"> 3D </span> experience furniture
+        store&apos;
       </p>
-
-      {/* <span className="h-[175px]"></span> */}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 md:m-6 w-[90vw]">
         <div className={`col-span-2 w-full rounded-lg bg-white ${montserrat}`}>
@@ -48,40 +47,63 @@ export default function Home() {
             DISCOVER CATEGORIES
           </div>
           <div className="text-[#986a4d] text-2xl grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 md:m-6">
-            <div className="bg-[#f8f0e5] text-3xl text-[#472d2d] rounded-lg hover:bg-[#eadbc8] py-6 flex flex-col justify-center items-center ml-2">
+            <Link
+              href="products?category=all"
+              className="bg-[#f8f0e5] text-3xl text-[#472d2d] rounded-lg hover:bg-[#eadbc8] py-6 flex flex-col justify-center items-center ml-2"
+            >
               All
-            </div>
-            <div className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2">
-              <div className="flex justify-center my-2">
+            </Link>
+            <Link
+              href="/products?category=chair"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
                 <TbArmchair2 />
               </div>
-              <div className="flex text-[#472d2d] justify-center">Chairs</div>
-            </div>
-            <div className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2">
-              <div className="flex justify-center my-2">
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Chairs
+              </div>
+            </Link>
+            <Link
+              href="products?category=bed"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
                 <IoBedOutline />
               </div>
-              <div className="flex text-[#472d2d] justify-center">Beds</div>
-            </div>
-            <div className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2">
-              <div className="flex justify-center my-2">
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Beds
+              </div>
+            </Link>
+            <Link
+              href="products?category=table"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 mr-2"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
                 <MdOutlineTableBar />
               </div>
-              <div className="flex text-[#472d2d] justify-center">Tables</div>
-            </div>
-            <div className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 mb-2">
-              <div className="flex justify-center my-2">
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Tables
+              </div>
+            </Link>
+            <Link
+              href="products?category=sofa"
+              className="bg-[#f8f0e5] rounded-lg hover:bg-[#eadbc8] md:py-8 ml-2 mb-2"
+            >
+              <div className="flex justify-center mt-2 md:my-2">
                 <PiCouchLight />
               </div>
-              <div className="flex text-[#472d2d] justify-center">Sofas</div>
-            </div>
+              <div className="flex text-[#472d2d] justify-center mb-2">
+                Sofas
+              </div>
+            </Link>
           </div>
         </div>
         <div
           className="bg-cover bg-center rounded-lg md:w-[30vw] md:h-[30vw] w-[420px] h-[420px]"
           style={{ backgroundImage: 'url("/images/room.jpg")' }}
         >
-          <button className="justify-center md:w-[30vw] md:h-[30vw] w-[420px] h-[420px] absolute bg-gray-900/70 hover:bg-gray-900/40 transition-all duration-300 rounded-lg flex flex-row items-center p-2">
+          <button className="flex flex-row justify-center md:w-[30vw] md:h-[30vw] w-[420px] h-[420px] absolute bg-gray-900/40 md:bg-gray-900/70 md:hover:bg-gray-900/40 transition-all duration-300 rounded-lg items-center p-2">
             <Link href="/furniture-editor">
               <span className="flex self-center text-4xl font-medium text-white">
                 Design Your Room

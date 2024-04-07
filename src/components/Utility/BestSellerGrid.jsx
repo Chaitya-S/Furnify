@@ -10,7 +10,7 @@ export default function BestSellerGrid({ products }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mx-6 mt-6 mb-8 p-4 bg-[#eadbc8]">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mx-6 mt-6 mb-8 p-4 bg-[#f8f0e5]">
         {products.map((p) => (
           <img
             key={p._id}
@@ -19,7 +19,8 @@ export default function BestSellerGrid({ products }) {
               setData(p);
               setIsOpen(true);
             }}
-            className="shadow-lg hover:shadow-2xl hover:scale-105 border-2 border-[#eadbc8]"
+            alt="image"
+            className="shadow-lg rounded-md hover:shadow-2xl hover:scale-105 border-2 border-[#eadbc8]"
           />
         ))}
       </div>
@@ -64,18 +65,6 @@ export default function BestSellerGrid({ products }) {
               </button>
             </div>
           </div>
-
-          {/* <div>
-              <img
-                src={urlForImage(data.image)}
-                className="h-[350px] w-[350px]"
-                alt=""
-              />
-              <div className="text-[#553939]">
-                <p className="text-xl font-semibold">{data.name}</p>
-                {data.price}
-              </div>
-            </div> */}
         </div>
       )}
     </>

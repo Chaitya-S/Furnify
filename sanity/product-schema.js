@@ -64,14 +64,28 @@ export const product = defineType({
 
 export const Images = defineType({
   name: "images",
-  title: "Home Page Carousel Images",
+  title: "Bestseller",
   type: "document",
   fields: [
     {
       name: "image",
       title: "Image",
-      type: "array",
-      of: [{ type: "image" }],
+      type: "image",
+    },
+    {
+      name: "name",
+      title: "Product Name",
+      type: "string",
+    },
+    {
+      name: "price",
+      title: "Price",
+      type: "number",
+    },
+    {
+      name: "slug",
+      title: "Product ka slug",
+      type: "slug",
     },
   ],
 });

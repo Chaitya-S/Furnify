@@ -64,7 +64,7 @@ export default function NavBar() {
           <SignedIn>
             <li className="rounded-full ring-4 p-0 m-2 cursor-pointer">
               {isLoaded ? (
-                <UserButton afterSignOutUrl="http://localhost:3000/" />
+                <UserButton afterSignOutUrl="https://furnify-drab.vercel.app/" />
               ) : (
                 <AiOutlineLoading />
               )}
